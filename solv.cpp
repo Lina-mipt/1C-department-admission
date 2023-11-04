@@ -13,16 +13,17 @@ int main(){
   std::cin >> n >> m; 
   std::cin >> w >> h; 
 
-  std::vector<std::vector<long long>> dist(n, std::vector<long long>(m)); 
-  for(int i = 0; i < n; ++i){
-    for(int j = 0; j < m; ++j){
+  std::vector<std::vector<long long>> dist(n + 1, std::vector<long long>(m + 1)); 
+  for(int i = 0; i < n + 1; ++i){
+    for(int j = 0; j < m + 1; ++j){
       std::cin >> dist[i][j]; 
     }
   }
 
   int k;
-  std::vector<std::unordered_set<int>> relationship(n * m + 1); 
   std::cin >> k;
+  std::vector<std::unordered_set<int>> relationship((n + 1) * (m + 1)); 
+
   for(int i = 0; i < k; ++i){
     int first, second; 
     std::cin >> first >> second; 
@@ -40,7 +41,10 @@ int main(){
     return res;
   };
 
-  int f; 
+  int f;
+
+  std::cin >> f;
+
   for(int i = 0; i < f; ++i){
     int first, second; 
     std::cin >> first >> second;
