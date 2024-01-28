@@ -44,19 +44,7 @@ int main() {
     relationship[--first].insert(--second);
   }
 
-  auto dist_2 = [&](int a, int b) -> unsigned long long {
-    int x1 = a / (m + 1), x2 = b / (m + 1);
-    int y1 = a % (m + 1), y2 = b % (m + 1);
-    unsigned long long dx = std::abs(x1 - x2) * h;
-    unsigned long long dy = std::abs(y1 - y2) * w;
-    unsigned long long res = dx * dx + dy * dy;
-    if (res > dist[x1][y1] * dist[x1][y1]) return 1e18;
-    if (relationship[a].count(b)) return 1e18;
-    return res;
-  };
-
-  int f;
-
+  int f
   std::cin >> f;
 
   for (int i = 0; i < f; ++i) {
